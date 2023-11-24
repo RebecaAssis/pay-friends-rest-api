@@ -2,7 +2,7 @@
 GET http://localhost:3000/payments
 
 ### POST 
-POST http://localhost:3000/payments/user 
+POST http://localhost:3000/payments/login 
 Content-Type: application/json
 
 {
