@@ -1,2 +1,11 @@
 ### acessando via GET 
 GET http://localhost:3000/payments
+
+### POST 
+POST http://localhost:3000/payments/user 
+Content-Type: application/json
+
+{
+    "email": "usuario@gmail.com", 
+    "password": "usuar"
+}

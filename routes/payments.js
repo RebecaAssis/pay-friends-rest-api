@@ -11,4 +11,21 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/user', async (req, res) => {
+    try {
+        const {email , password} = req.body;
+        const payments = await Payment.find({'account.email': email});
+
+        if (payments[0].account[0].email === email && payments[0].account[0].password === password) {
+            console.log('user logado');
+            return res.status(200).json(payments);
+        } else {
+            return res.status(200).json({error: 'usuário ou senha inválido'});
+        }
+
+    } catch (err) {
+        console.log(err);
+    }
+})
+
 module.exports = router;
